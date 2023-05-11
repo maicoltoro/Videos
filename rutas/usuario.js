@@ -37,7 +37,6 @@ router.post('/agregarusuario', upload.single('video'), async (req, res) => {
 });
   
 router.post("/ObtenerUsuarios",async (req,res) =>{
-  console.log("hola")
     await client.connect();
     const collection = client.db("tablaPrueba").collection("fs.files");
     const cursor = collection.find({});
@@ -45,7 +44,6 @@ router.post("/ObtenerUsuarios",async (req,res) =>{
     await cursor.forEach((document) => {
         data.push(document)
     });
-    console.log(data)
     res.send(data)
 })
 
