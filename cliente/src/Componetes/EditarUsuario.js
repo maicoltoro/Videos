@@ -11,7 +11,7 @@ export const EditarUsuario = () =>{
         const fetchData = async () => {
           try {
             const api = axios.create({
-              baseURL: 'http://localhost:5000',
+              baseURL: 'http://192.168.132.129:5000/',
               responseType: 'arraybuffer', // Para recibir los datos como un ArrayBuffer
             });
       

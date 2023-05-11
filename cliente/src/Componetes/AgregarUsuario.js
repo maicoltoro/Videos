@@ -13,7 +13,7 @@ export const AgregarUsuario = () =>{
             formData.append('video', Video);
 
         const api = axios.create({
-                baseURL: 'http://localhost:5000'
+                baseURL: 'http://192.168.132.129:5000/'
             })
             
         api.post('/api/usuario/agregarusuario',formData)

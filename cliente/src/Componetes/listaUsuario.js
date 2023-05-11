@@ -7,7 +7,7 @@ export const ListaUsuario = () =>{
 
     useEffect(()=>{
         const api = axios.create({
-            baseURL: 'http://localhost:5000'
+            baseURL: 'http://192.168.132.129:5000/'
         })
         const d = [];
         api.post('/api/usuario/ObtenerUsuarios',d)

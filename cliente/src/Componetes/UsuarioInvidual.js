@@ -7,7 +7,7 @@ export const UsuarioInvidual = ({usuario}) =>{
 
     const eliminar = (value) =>{
         const api = axios.create({
-            baseURL: 'http://localhost:5000'
+            baseURL: 'http://192.168.132.129:5000/'
         })
         const Obj = {
             ID: value
