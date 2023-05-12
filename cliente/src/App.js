@@ -9,7 +9,7 @@ import { api } from './ApiConfig/WebConfig';
 function App() {
 
   useEffect(() => {
-    api.post('/api/usuario/tokent', " ")
+    api.post('/api/usuario/tokent', "hola")
     .then(res => {
       console.log(res)
     })
