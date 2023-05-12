@@ -95,6 +95,6 @@ router.post("/Eliminarusuario",async (req,res) =>{
 
 router.post("/tokent",async (req , res) =>{
 
-  const username = req.session;
+  const username = req.session.username;
   console.log(username)
 });
