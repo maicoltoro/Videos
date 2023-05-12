@@ -1,14 +1,12 @@
-import axios from "axios";
 import React from "react";
 import {Link} from 'react-router-dom'
 import { Eliminar, Fallo } from "../JavaScript/Swall_Alert";
+import { api } from "../ApiConfig/WebConfig";
 
 export const UsuarioInvidual = ({usuario}) =>{
 
     const eliminar = (value) =>{
-        const api = axios.create({
-            baseURL: 'http://192.168.132.129:5000/'
-        })
+        
         const Obj = {
             ID: value
         }

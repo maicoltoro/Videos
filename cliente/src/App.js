@@ -3,8 +3,18 @@ import { ListaUsuario } from '../src/Componetes/listaUsuario';
 import { AgregarUsuario } from '../src/Componetes/AgregarUsuario';
 import { EditarUsuario } from '../src/Componetes/EditarUsuario';
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { api } from './ApiConfig/WebConfig';
 
 function App() {
+
+  useEffect(() => {
+    api.post('/api/usuario/tokent', " ")
+    .then(res => {
+      console.log(res)
+    })
+  }, []);
+
   return (
     <div className="App">
 

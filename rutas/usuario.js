@@ -4,6 +4,9 @@ const multer = require('multer');
 const mongodb = require('mongodb');
 const { MongoClient } = mongodb;
 const ObjectId = require('mongodb').ObjectId;
+// const os = require('os');
+// const { exec } = require('child_process');
+const session = require('express-session');
 
 module.exports = router
 
@@ -88,4 +91,10 @@ router.post("/Eliminarusuario",async (req,res) =>{
       console.log(error);
       res.status(500).send('Error');
     }
-})
+});
+
+router.post("/tokent",async (req , res) =>{
+
+  const username = req.session;
+  console.log(username)
+});

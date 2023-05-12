@@ -1,6 +1,6 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { apiEnvio } from "../ApiConfig/WebConfig";
 
 export const EditarUsuario = () =>{
 
@@ -10,12 +10,7 @@ export const EditarUsuario = () =>{
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const api = axios.create({
-              baseURL: 'http://192.168.132.129:5000/',
-              responseType: 'arraybuffer', // Para recibir los datos como un ArrayBuffer
-            });
-      
-            const response = await api.post('/api/usuario/ObtenerDataUsuario', { ID: param._id });
+            const response = await apiEnvio.post('/api/usuario/ObtenerDataUsuario', { ID: param._id });
             const videoBlob = new Blob([response.data], { type: 'video/mp4' });
             const videoUrl = URL.createObjectURL(videoBlob);
             setnombre(videoUrl);

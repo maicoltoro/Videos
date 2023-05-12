@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import { UsuarioInvidual } from "./UsuarioInvidual";
-import axios from  'axios'
+import { api } from "../ApiConfig/WebConfig";
 export const ListaUsuario = () =>{
 
     const [DataUsuario,SetDataUsuario] = useState ([])
 
     useEffect(()=>{
-        const api = axios.create({
-            baseURL: 'http://192.168.132.129:5000/'
-        })
+        
         const d = [];
         api.post('/api/usuario/ObtenerUsuarios',d)
             .then(res =>{

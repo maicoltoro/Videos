@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from  'axios'
 import { Correcto, Fallo, validarDatos } from "../JavaScript/Swall_Alert";
+import { apiEnvio } from "../ApiConfig/WebConfig";
 
 export const AgregarUsuario = () =>{
     
@@ -11,12 +11,8 @@ export const AgregarUsuario = () =>{
         const formData = new FormData();
             formData.append('nombre', Video.name);
             formData.append('video', Video);
-
-        const api = axios.create({
-                baseURL: 'http://192.168.132.129:5000/'
-            })
             
-        api.post('/api/usuario/agregarusuario',formData)
+        apiEnvio.post('/api/usuario/agregarusuario',formData)
             .then(res =>{
                 if(res.data==='Ok') return Correcto()
                 else return Fallo()
